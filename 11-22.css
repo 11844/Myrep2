@@ -1,0 +1,5 @@
+ resize vertical /* allows resizing only for the height */
+ resize horizontal /* allows resizing only for the width */
+ resize none /* does not allow resizing at all */
+{
+}
