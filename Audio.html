@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Audio Controls</title>
+  <style>
+    body {
+      background-color: Aquamarine;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    .audio-controls {
+      margin-top: 20px;
+      display: inline-block;
+    }
+    .audio-controls button, .audio-controls input[type="range"] {
+      margin: 10px;
+    }
+    .audio-controls input[type="range"] {
+      width: 300px;
+    }
+    .time-display {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Audio / Songs</h2>
+  <div class="audio-controls">
+    <button onclick="playPause()">Play/Pause</button>
+    <button onclick="stopAudio()">Stop</button>
+    <br>
+    <input type="range" id="seekBar" value="0" max="100" step="1" onchange="seekAudio()">
+    <br>
+    <label for="volumeControl">Volume:</label>
+    <input type="range" id="volumeControl" value="100" max="100" step="1" onchange="setVolume()">
+    <div class="time-display">
+      <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+    </div>
+  </div>
+  <audio id="audio1">
+    <source src="Dynamite.mp3" type="audio/mp3">
+    Your browser does not support HTML audio.
+  </audio>
+  <script>
+    var myAudio = document.getElementById("audio1");
+    var seekBar = document.getElementById("seekBar");
+    var volumeControl = document.getElementById("volumeControl");
+    var currentTimeDisplay = document.getElementById("currentTime");
+    var durationDisplay = document.getElementById("duration");
+    myAudio.onloadedmetadata = function() {
+      seekBar.max = myAudio.duration;
+      durationDisplay.textContent = formatTime(myAudio.duration);
+    };
+    myAudio.ontimeupdate = function() {
+      updateTime();
+    };
+    function playPause() {
+      if (myAudio.paused) {
+        myAudio.play();
+      } else {
+        myAudio.pause();
+      }
+    }
+    function stopAudio() {
+      myAudio.pause();
+      myAudio.currentTime = 0;
+    }
+    function updateTime() {
+      seekBar.value = myAudio.currentTime;
+      currentTimeDisplay.textContent = formatTime(myAudio.currentTime);
+    }
+    function seekAudio() {
+      myAudio.currentTime = seekBar.value;
+    }
+    function setVolume() {
+      myAudio.volume = volumeControl.value / 100;
+    }
+    function formatTime(seconds) {
+      var minutes = Math.floor(seconds / 60);
+      seconds = Math.floor(seconds % 60);
+      if (seconds < 10) {
+        seconds = "0" + seconds;
+      }
+      return minutes + ":" + seconds;
+    }
+  </script>
+</body>
+</html>
