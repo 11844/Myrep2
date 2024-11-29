@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: indianred;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+    }
+    header {
+      background: steelblue;
+      color: white;
+      padding-top: 30px;
+      min-height: 70px;
+      border-bottom: #77b300 3px solid;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    header ul {
+      padding: 0;
+      list-style: none;
+    }
+    header li {
+      display: inline;
+      padding: 0 20px 0 20px;
+    }
+    header #branding {
+      float: left;
+    }
+    header #branding h1 {
+      margin: 0;
+    }
+    header nav {
+      float: right;
+      margin-top: 10px;
+    }
+    section#about, section#projects, section#contact {
+      padding: 20px;
+      background: white;
+      margin: 20px 0;
+    }
+    section h2 {
+      color: black;
+    }
+    section#projects .project {
+      margin-bottom: 20px;
+    }
+    section#projects img {
+      width: 100%;
+      height: auto;
+    }
+    footer {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+    form .form-group {
+      margin-bottom: 15px;
+    }
+    form .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    form .form-group input, form .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid gray;
+    }
+    form .form-group textarea {
+      resize: none;
+    }
+    form button {
+      display: inline-block;
+      background: #77b300;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #333;
+    }
+    @media (max-width: 768px) {
+      header nav, header #branding {
+        float: none;
+        text-align: center;
+      }
+      header nav ul {
+        text-align: center;
+      }
+      header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1>My Portfolio</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>My name is G.Bhuvan. I am a passionate web developer with experience in HTML, CSS, and JavaScript. I love creating beautiful and functional websites. Welcome to my personal portfolio where you can see some of my latest projects and get to know more about me.</p>
+  </section>
+  <section id="projects" class="container">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Project One</h3>
+      <img src="https://via.placeholder.com/600x400" alt="Project One">
+      <p>Description of project one.</p>
+    </div>
+    <div class="project">
+      <h3>Project Two</h3>
+      <img src="https://via.placeholder.com/600x400" alt="Project Two">
+      <p>Description of project two.</p>
+    </div>
+    <div class="project">
+      <h3>Project Three</h3>
+      <img src="https://via.placeholder.com/600x400" alt="Project Three">
+      <p>Description of project three.</p>
+    </div>
+  </section>
+  <section id="contact" class="container">
+    <h2>Contact Me</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  <footer>
+    <p>© 2024 My Portfolio by G.Bhuvan. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
