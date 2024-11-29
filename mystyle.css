@@ -1,4 +1,8 @@
-h1{background-color: green;
-color: pink;}
-p{color: red;
-background-color: black;}
+body {
+ background-color: lightblue;
+}
+
+h1 {
+ color: navy;
+ margin-left: 20px;
+}
