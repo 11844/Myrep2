@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <title>Image Maps</title>
+ </head>
+ <body>
+  <div class="jumbotron text-left">
+   <h2>Image Maps</h2>
+   <p>Click on the computer, the phone, or the cup of coffee to go to a new page and read more about the topic:</p>
+   <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+   <map name="workmap">
+    <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://www.w3schools.com/html/computer.htm">
+    <area shape="rect" coords="290,172,333,250" alt="Phone" href="https://www.w3schools.com/html/phone.htm">
+    <area shape="circle" coords="337,300,44" alt="Cup of Coffee" href="https://www.w3schools.com/html/coffee.htm" onclick="myFunction()">
+   </map>
+   <script>
+    function myFunction() {
+     alert("You clicked the coffee cup!");
+    }
+   </script>
+  </div>
+ </body>
+</html>
